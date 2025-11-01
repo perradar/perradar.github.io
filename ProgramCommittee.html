@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Pervasive Radar</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
+.w3-bar,h1,button {font-family: "Montserrat", sans-serif}
+.fa-anchor,.fa-coffee {font-size:200px}
+    .table-wrap {
+      max-width: 1100px;
+      margin: 0 auto;
+      background: #fff;
+      border-radius: 12px;
+      padding: 1rem 1rem 0.25rem;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    thead th {
+      text-align: left;
+      font-weight: 600;
+      padding: 0.9rem 0.8rem;
+      background: #f0f0f0;       /* light grey header */
+      color: #333;
+    }
+    tbody td {
+      padding: 0.8rem;
+      vertical-align: top;
+    }
+    /* zebra striping with very light greys */
+    tbody tr:nth-child(odd)  { background: #fcfcfc; }
+    tbody tr:nth-child(even) { background: #f6f6f6; }
+
+    /* subtle hover (still borderless) */
+    tbody tr:hover { background: #ededed; }
+</style>
+</head>
+<body>
+
+<!-- Navbar -->
+<div class="w3-top">
+  <div class="w3-bar w3-khaki w3-card w3-left-align w3-large">
+    <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-khaki" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+    <a href="index.html" class="w3-bar-item w3-button w3-padding-large w3-hover-white">Home</a>
+    <a href="CallForPapers.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Call For Papers</a>
+    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-white">Program Committee</a>
+    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Program</a>
+    <a href="imp_dates.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Important Dates</a>
+    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Registration</a>
+  </div>
+
+  <!-- Navbar on small screens -->
+  <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-large">
+    <a href="index.html" class="w3-bar-item w3-button w3-padding-large">Home</a>
+    <a href="CallForPapers.html" class="w3-bar-item w3-button w3-padding-large">Call For Papers</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large">Program Committee</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large">Program</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large w3-white">Important Dates</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large">Registration</a>
+  </div>
+</div>
+
+<!-- Header -->
+<header class="w3-container w3-khaki w3-center" style="padding:128px 16px">
+    <div style="
+    background-image: url('images/PerRad_header.jpg');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.2;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 55%;
+    z-index: 0;
+    pointer-events: none;">
+  </div>
+  <h1 style='font-family: "Comic Sans"' class="w3-margin w3-jumbo w3-text-deep-purple">First International Workshop on Pervasive Radars (PerRad)</h1>  
+  <p class="w3-xlarge">PerRad is Held in Conjucture with IEEE PerCom'26 Workshops</p>
+  <p class="w3-xlarge">March 16 to 20, Pisa, Italy</p>
+</header>
+<!-- First Grid-->
+<div class="w3-row-padding w3-padding-16 w3-container">
+    <div class="w3-content">    
+        <h1 class="w3-text-deep-purple"><b>Program Committee</b></h1>
+        <div class="table-wrap">
+            <table aria-label="Contact List">
+              <thead>
+                <tr>
+                  <th>Title</th>
+                  <th>First Name</th>
+                  <th>Last Name</th>
+                  <th>Institution</th>
+                  <th>Country</th>
+                  <th>Email</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td data-label="Title">Dr.</td>
+                  <td data-label="First Name">Dong</td>
+                  <td data-label="Last Name">Li</td>
+                  <td data-label="Institution">University of Maryland, Baltimore County</td>
+                  <td data-label="Country">USA</td>
+                  <td data-label="Email"><a class="mail" href="mailto:dli@umbc.edu">dli@umbc.edu</a></td>
+                </tr>
+                <tr>
+                  <td data-label="Title">Dr.</td>
+                  <td data-label="First Name">Basabdatta</td>
+                  <td data-label="Last Name">Palit</td>
+                  <td data-label="Institution">National Institute of Technology, Rourkela</td>
+                  <td data-label="Country">India</td>
+                  <td data-label="Email"><a class="mail" href="mailto:basabdatta.iitkgp@gmail.com">basabdatta.iitkgp@gmail.com</a></td>
+                </tr>
+                <tr>
+                  <td data-label="Title">Dr.</td>
+                  <td data-label="First Name">Swadhin</td>
+                  <td data-label="Last Name">Pradhan</td>
+                  <td data-label="Institution">University of Texas at Austin</td>
+                  <td data-label="Country">USA</td>
+                  <td data-label="Email"><a class="mail" href="mailto:swadhinjeet88@gmail.com">swadhinjeet88@gmail.com</a></td>
+                </tr>
+                <tr>
+                  <td data-label="Title">Dr.</td>
+                  <td data-label="First Name">Weitao</td>
+                  <td data-label="Last Name">Xu</td>
+                  <td data-label="Institution">City University of Hong Kong</td>
+                  <td data-label="Country">Hong Kong</td>
+                  <td data-label="Email"><a class="mail" href="mailto:weitaoxu@cityu.edu.hk">weitaoxu@cityu.edu.hk</a></td>
+                </tr>
+                <tr>
+                  <td data-label="Title">Dr.</td>
+                  <td data-label="First Name">Yu</td>
+                  <td data-label="Last Name">Zhang</td>
+                  <td data-label="Institution">Macquarie University</td>
+                  <td data-label="Country">Australia</td>
+                  <td data-label="Email"><a class="mail" href="mailto:y.zhang@mq.edu.au">y.zhang@mq.edu.au</a></td>
+                </tr>
+                <tr>
+                  <td data-label="Title">Prof.</td>
+                  <td data-label="First Name">Mahbub</td>
+                  <td data-label="Last Name">Hassan</td>
+                  <td data-label="Institution">University of New South Wales</td>
+                  <td data-label="Country">Australia</td>
+                  <td data-label="Email"><a class="mail" href="mailto:mahbub@cse.unsw.edu.au">mahbub@cse.unsw.edu.au</a></td>
+                </tr>
+                <tr>
+                  <td data-label="Title">Prof.</td>
+                  <td data-label="First Name">Sanjib</td>
+                  <td data-label="Last Name">Sur</td>
+                  <td data-label="Institution">University of South Carolina</td>
+                  <td data-label="Country">USA</td>
+                  <td data-label="Email"><a class="mail" href="mailto:sur@cse.sc.edu">sur@cse.sc.edu</a></td>
+                </tr>
+                <tr>
+                  <td data-label="Title">Prof.</td>
+                  <td data-label="First Name">Hirozumi</td>
+                  <td data-label="Last Name">Yamaguchi</td>
+                  <td data-label="Institution">The University of Osaka</td>
+                  <td data-label="Country">Japan</td>
+                  <td data-label="Email"><a class="mail" href="mailto:h-yamagu@ist.osaka-u.ac.jp">h-yamagu@ist.osaka-u.ac.jp</a></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+    </div>
+</div>
+<!-- Footer -->
+<footer class="w3-container w3-padding-64 w3-center w3-opacity">  
+  <div class="w3-xlarge w3-padding-32">
+    For Queries Contact: <a href="mailto:perrad.workshop@gmail.com">perrad.workshop@gmail.com </a>
+    <!-- <i class="fa fa-facebook-official w3-hover-opacity"></i>
+    <i class="fa fa-instagram w3-hover-opacity"></i>
+    <i class="fa fa-snapchat w3-hover-opacity"></i>
+    <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+    <i class="fa fa-twitter w3-hover-opacity"></i>
+    <i class="fa fa-linkedin w3-hover-opacity"></i> -->
+ </div>
+ <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
+</footer>
+
+<script>
+// Used to toggle the menu on small screens when clicking on the menu button
+function myFunction() {
+  var x = document.getElementById("navDemo");
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+  } else { 
+    x.className = x.className.replace(" w3-show", "");
+  }
+}
+</script>
+
+</body>
