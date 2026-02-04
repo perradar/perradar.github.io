@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Pervasive Radar</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
+.w3-bar,h1,button {font-family: "Montserrat", sans-serif}
+.fa-anchor,.fa-coffee {font-size:200px}
+    .table-wrap {
+      max-width: 1500px;
+      margin: 0 auto;
+      background: #fff;
+      border-radius: 12px;
+      padding: 1rem 1rem 1rem 1rem;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    thead th {
+      text-align: left;
+      font-weight: 600;
+      padding: 0.9rem 0.8rem;
+      background: #f0f0f0;       /* light grey header */
+      color: #333;
+    }
+    tbody td {
+      padding: 0.8rem;
+      vertical-align: top;
+    }
+    /* zebra striping with very light greys */
+    tbody tr:nth-child(odd)  { background: #fcfcfc; }
+    tbody tr:nth-child(even) { background: #f6f6f6; }
+
+    /* subtle hover (still borderless) */
+    tbody tr:hover { background: #ededed; }
+</style>
+<style>
+  .schedule-table {
+    width: 100%;
+    max-width: 100%;
+    border-collapse: collapse;
+    table-layout: auto;   /* critical */
+    font-family: Arial, sans-serif;
+    font-size: 12pt;
+  }
+
+  .schedule-table th,
+  .schedule-table td {
+    padding: 6px 8px;
+    word-break: break-word;
+    white-space: normal;
+  }
+
+  /* Column widths */
+  .col-time   { width: 20%; min-width: 90px; }
+  .col-title  { width: 40%; }
+  .col-author { width: 40%; }
+
+  /* Header */
+  .schedule-title {
+    text-align: center;
+    font-weight: bold;
+    font-size: 14pt;
+  }
+
+  /* Mobile optimization */
+  @media (max-width: 768px) {
+    .col-time { width: 25%; }
+    .col-title,
+    .col-author { width: 75%; }
+  }
+</style>
+<style>
+  .keynote-wrapper {
+    max-width: 60%;
+    margin: 24px auto;
+  }
+
+  .keynote-box {
+    background-color: #f7f7f7;        /* light grey */
+    border-radius: 10px;
+    padding: 18px;
+    font-family: Arial, sans-serif;
+    line-height: 1.5;
+  }
+
+  .keynote-title {
+    font-size: 15pt;
+    font-weight: bold;
+    margin-bottom: 12px;
+    text-align: left;
+  }
+
+  .keynote-content img {
+    float: left;
+    width: 170px;
+    max-width: 38%;
+    margin: 0 16px 12px 0;
+    border-radius: 8px;
+  }
+
+  .keynote-content p {
+    font-size: 12pt;
+    margin: 0;
+    text-align: justify;
+  }
+
+  /* Mobile-friendly stacking */
+  @media (max-width: 768px) {
+    .keynote-content img {
+      float: none;
+      display: block;
+      margin: 0 auto 14px auto;
+      width: 60%;
+      max-width: 220px;
+    }
+
+    .keynote-title {
+      text-align: center;
+    }
+  }
+</style>
+
+
+
+
+
+</head>
+<body>
+
+<!-- Navbar -->
+<div class="w3-top">
+  <div class="w3-bar w3-khaki w3-card w3-left-align w3-large">
+    <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-khaki" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+    <a href="index.html" class="w3-bar-item w3-button w3-padding-large w3-hover-white">Home</a>
+    <a href="CallForPapers.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Call For Papers</a>
+    <a href="ProgramCommittee.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Program Committee</a>
+    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-white">Program</a>
+    <a href="imp_dates.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Important Dates</a>
+    <a href="https://percom.org/registration-instructions/" target="_blank" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Registration</a>
+  </div>
+
+  <!-- Navbar on small screens -->
+  <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-large">
+    <a href="index.html" class="w3-bar-item w3-button w3-padding-large">Home</a>
+    <a href="CallForPapers.html" class="w3-bar-item w3-button w3-padding-large">Call For Papers</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large">Program Committee</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large">Program</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large w3-white">Important Dates</a>
+    <a href="https://percom.org/registration-instructions/" target="_blank"class="w3-bar-item w3-button w3-padding-large">Registration</a>
+  </div>
+</div>
+
+<!-- Header -->
+<header class="w3-container w3-khaki w3-center" style="padding: 80px 3px">
+    <div style="
+    background-image: url('images/PerRad_header.jpg');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.2;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 45%;
+    z-index: 0;
+    pointer-events: none;">
+  </div>
+  <h1 style='font-family: "Comic Sans"' class="w3-margin w3-jumbo w3-text-deep-purple">First International Workshop on Pervasive Radars (PerRad)</h1>  
+  <p class="w3-xlarge">PerRad is Held in Conjucture with IEEE PerCom'26 Workshops</p>
+  <p class="w3-xlarge">Workshop Date: March 16 2026, Pisa, Italy</p>
+</header>
+<!-- First Grid-->
+<div class="w3-row-padding w3-padding-16 w3-container">
+    <div class="w3-content">    
+        <h1 class="w3-text-deep-purple"><b>Program</b></h1>
+        <div class="table-wrap">
+            <table class="schedule-table" border="1">
+  <thead>
+    <tr style="height: 21px;">
+      <th colspan="3" class="schedule-title">
+  First International Workshop on Pervasive Radars (PerRad)<br>
+  Monday, March 16th 2026
+</th>
+    </tr>
+  </thead><colgroup><col width="137"><col width="380"><col width="808"></colgroup>
+  <tbody>
+    <tr style="height: 21px;">
+      <td rowspan="1" colspan="3" style="border-width: 1px; border-style: solid; border-color: rgb(204, 204, 204) rgb(0, 0, 0) rgb(0, 0, 0); border-image: initial; overflow: hidden; padding: 2px 3px; vertical-align: bottom; background-color: rgb(217, 234, 211); font-size: 12pt; font-weight: bold; overflow-wrap: break-word; text-align: center;">Venue: TBD</td>
+    </tr>
+    <tr>
+  <td class="col-time">Time</td>
+  <td class="col-title">Title</td>
+  <td class="col-author">Speaker/Authors</td>
+</tr>
+<tr style="height: 21px;">
+      <td rowspan="1" colspan="3" style="border-width: 1px; border-style: solid; border-color: rgb(204, 204, 204) rgb(0, 0, 0) rgb(0, 0, 0); border-image: initial; overflow: hidden; padding: 2px 3px; vertical-align: bottom; background-color: rgb(244, 204, 204); font-size: 12pt; font-weight: bold; overflow-wrap: break-word; text-align: center;">Session 1</td>
+    </tr>
+    <tr style="height: 21px;">
+      <td style="border-width: 1px; border-style: solid; border-color: rgb(204, 204, 204) rgb(0, 0, 0) rgb(0, 0, 0); border-image: initial; overflow: hidden; padding: 2px 3px; vertical-align: bottom; background-color: rgb(204, 204, 204); font-size: 12pt; text-align: center;">2:00 - 2:10</td>
+      <td rowspan="1" colspan="2" style="border-width: 1px; border-style: solid; border-color: rgb(204, 204, 204) rgb(0, 0, 0) rgb(0, 0, 0) rgb(204, 204, 204); border-image: initial; overflow: hidden; padding: 2px 3px; vertical-align: bottom; background-color: rgb(204, 204, 204); font-size: 12pt; font-weight: bold; overflow-wrap: break-word; text-align: center;">Welcome Address by Workshop Chairs</td>
+    </tr>
+    <tr style="height: 21px;">
+      <td style="border-width: 1px; border-style: solid; border-color: rgb(204, 204, 204) rgb(0, 0, 0) rgb(0, 0, 0); border-image: initial; overflow: hidden; padding: 2px 3px; vertical-align: bottom; background-color: rgb(255, 229, 153); font-size: 12pt; overflow-wrap: break-word; text-align: center;">2:10-3:10</td>
+      <td style="border-width: 1px; border-style: solid; border-color: rgb(204, 204, 204) rgb(0, 0, 0) rgb(0, 0, 0) rgb(204, 204, 204); border-image: initial; overflow: hidden; padding: 2px 3px; vertical-align: bottom; background-color: rgb(255, 229, 153); font-size: 12pt; font-style: italic; overflow-wrap: break-word; text-align: center;">Keynote: Title &lt;TBD&gt;</td>
+      <td style="border-width: 1px; border-style: solid; border-color: rgb(204, 204, 204) rgb(0, 0, 0) rgb(0, 0, 0) rgb(204, 204, 204); border-image: initial; overflow: hidden; padding: 2px 3px; vertical-align: bottom; background-color: rgb(255, 229, 153); font-size: 12pt; font-style: italic; overflow-wrap: break-word; text-align: center;">Prof. Stephan Sigg, Aalto University, Finland<br></td>
+    </tr>
+    <tr style="height: 21px;">
+      <td style="border-width: 1px; border-style: solid; border-color: rgb(204, 204, 204) rgb(0, 0, 0) rgb(0, 0, 0); border-image: initial; overflow: hidden; padding: 2px 3px; vertical-align: bottom; background-color: rgb(207, 226, 243); font-size: 12pt; font-style: italic; overflow-wrap: break-word; text-align: center;">3:10-3:30</td>
+      <td style="border-width: 1px; border-style: solid; border-color: rgb(204, 204, 204) rgb(0, 0, 0) rgb(0, 0, 0) rgb(204, 204, 204); border-image: initial; overflow: hidden; padding: 2px 3px; vertical-align: bottom; background-color: rgb(207, 226, 243); font-size: 12pt; font-style: italic; overflow-wrap: break-word; text-align: center;">Paper-1: HyperEcho: Structured Higher Order Representation for Automotive Radar Semantic Segmentation</td>
+      <td style="border-width: 1px; border-style: solid; border-color: rgb(204, 204, 204) rgb(0, 0, 0) rgb(0, 0, 0) rgb(204, 204, 204); border-image: initial; overflow: hidden; padding: 2px 3px; vertical-align: bottom; background-color: rgb(207, 226, 243); font-size: 12pt; font-style: italic; overflow-wrap: break-word; text-align: center;">Abdelwahed Khamis (CSIRO, Australia); Muhammad Umer Ramzan and Usman Ali (GIFT University, Pakistan); Ali Zia (Machine Learning &amp; Artificial Intelligence-Future Science Platforms, CSIRO, Australia)</td>
+    </tr>
+    <tr style="height: 21px;">
+      <td style="border-width: 1px; border-style: solid; border-color: rgb(204, 204, 204) rgb(0, 0, 0) rgb(0, 0, 0); border-image: initial; overflow: hidden; padding: 2px 3px; vertical-align: bottom; background-color: rgb(204, 204, 204); font-size: 12pt; text-align: center;">3:30 - 4:00</td>
+      <td rowspan="1" colspan="2" style="border-width: 1px; border-style: solid; border-color: rgb(204, 204, 204) rgb(0, 0, 0) rgb(0, 0, 0) rgb(204, 204, 204); border-image: initial; overflow: hidden; padding: 2px 3px; vertical-align: bottom; background-color: rgb(204, 204, 204); font-size: 12pt; font-weight: bold; overflow-wrap: break-word; text-align: center;">Coffee Break</td>
+    </tr>
+    <tr style="height: 21px;">
+      <td rowspan="1" colspan="3" style="border-width: 1px; border-style: solid; border-color: rgb(204, 204, 204) rgb(0, 0, 0) rgb(0, 0, 0); border-image: initial; overflow: hidden; padding: 2px 3px; vertical-align: bottom; background-color: rgb(244, 204, 204); font-size: 12pt; font-weight: bold; overflow-wrap: break-word; text-align: center;">Session 2</td>
+    </tr>
+    <tr style="height: 21px;">
+      <td style="border-width: 1px; border-style: solid; border-color: rgb(204, 204, 204) rgb(0, 0, 0) rgb(0, 0, 0); border-image: initial; overflow: hidden; padding: 2px 3px; vertical-align: bottom; background-color: rgb(207, 226, 243); font-size: 12pt; font-style: italic; overflow-wrap: break-word; text-align: center;">4:00 - 4:20</td>
+      <td style="border-width: 1px; border-style: solid; border-color: rgb(204, 204, 204) rgb(0, 0, 0) rgb(0, 0, 0) rgb(204, 204, 204); border-image: initial; overflow: hidden; padding: 2px 3px; vertical-align: bottom; background-color: rgb(207, 226, 243); font-size: 12pt; font-style: italic; overflow-wrap: break-word; text-align: center;">Paper-2: A Lightweight Model-Driven 4D Radar Framework for Pervasive Human Detection in Harsh Conditions</td>
+      <td style="border-width: 1px; border-style: solid; border-color: rgb(204, 204, 204) rgb(0, 0, 0) rgb(0, 0, 0) rgb(204, 204, 204); border-image: initial; overflow: hidden; padding: 2px 3px; vertical-align: bottom; background-color: rgb(207, 226, 243); font-size: 12pt; font-style: italic; overflow-wrap: break-word; text-align: center;">Zhenan Liu and Amir Khajepour (University of Waterloo, Canada); George Shaker (University of Waterloo &amp; Spark Tech Labs, Canada)</td>
+    </tr>
+    <tr style="height: 21px;">
+      <td style="border-width: 1px; border-style: solid; border-color: rgb(204, 204, 204) rgb(0, 0, 0) rgb(0, 0, 0); border-image: initial; overflow: hidden; padding: 2px 3px; vertical-align: bottom; background-color: rgb(207, 226, 243); font-size: 12pt; overflow-wrap: break-word; text-align: center;">4:20 - 4:40</td>
+      <td style="border-width: 1px; border-style: solid; border-color: rgb(204, 204, 204) rgb(0, 0, 0) rgb(0, 0, 0) rgb(204, 204, 204); border-image: initial; overflow: hidden; padding: 2px 3px; vertical-align: bottom; background-color: rgb(207, 226, 243); font-size: 12pt; font-style: italic; overflow-wrap: break-word; text-align: center;">Paper-3: Raydar: A Ray-Tracing-Driven Framework Enabling Pattern-Based Recognition in ISAC Radar</td>
+      <td style="border-width: 1px; border-style: solid; border-color: rgb(204, 204, 204) rgb(0, 0, 0) rgb(0, 0, 0) rgb(204, 204, 204); border-image: initial; overflow: hidden; padding: 2px 3px; vertical-align: bottom; background-color: rgb(207, 226, 243); font-size: 12pt; font-style: italic; overflow-wrap: break-word; text-align: center;">Heetae Jin and Akira Uchiyama (The University of Osaka, Japan)<br></td>
+    </tr>
+    <tr style="height: 21px;">
+      <td style="border-width: 1px; border-style: solid; border-color: rgb(204, 204, 204) rgb(0, 0, 0) rgb(0, 0, 0); border-image: initial; overflow: hidden; padding: 2px 3px; vertical-align: bottom; background-color: rgb(207, 226, 243); font-size: 12pt; font-style: italic; overflow-wrap: break-word; text-align: center;">4:40 - 5:00</td>
+      <td style="border-width: 1px; border-style: solid; border-color: rgb(204, 204, 204) rgb(0, 0, 0) rgb(0, 0, 0) rgb(204, 204, 204); border-image: initial; overflow: hidden; padding: 2px 3px; vertical-align: bottom; background-color: rgb(207, 226, 243); font-size: 12pt; font-style: italic; overflow-wrap: break-word; text-align: center;">Paper-4: Radar-Based Fall Detection for Assisted Living: A Digital-Twin Representation Case Study</td>
+      <td style="border-width: 1px; border-style: solid; border-color: rgb(204, 204, 204) rgb(0, 0, 0) rgb(0, 0, 0) rgb(204, 204, 204); border-image: initial; overflow: hidden; padding: 2px 3px; vertical-align: bottom; background-color: rgb(207, 226, 243); font-size: 12pt; font-style: italic; overflow-wrap: break-word; text-align: center;">Sebastian Ratto V, Huy Trinh, Ahmed N. Sayed and Abdelrahman Elbadrawy (University of Waterloo, Canada); Arien Sligar (Ansys Inc., USA); George Shaker (University of Waterloo &amp; Spark Tech Labs, Canada)</td>
+    </tr>
+    <tr style="height: 21px;">
+      <td rowspan="1" colspan="3" style="border-width: 1px; border-style: solid; border-color: rgb(204, 204, 204) rgb(0, 0, 0) rgb(0, 0, 0); border-image: initial; overflow: hidden; padding: 2px 3px; vertical-align: bottom; background-color: rgb(244, 204, 204); font-size: 12pt; font-weight: bold; overflow-wrap: break-word; text-align: center;">Session 3</td>
+    </tr>
+    <tr style="height: 21px;">
+      <td style="border-width: 1px; border-style: solid; border-color: rgb(204, 204, 204) rgb(0, 0, 0) rgb(0, 0, 0); border-image: initial; overflow: hidden; padding: 2px 3px; vertical-align: bottom; background-color: rgb(207, 226, 243); font-size: 12pt; font-style: italic; overflow-wrap: break-word; text-align: center;">5:00-6:00</td>
+      <td style="border-width: 1px; border-style: solid; border-color: rgb(204, 204, 204) rgb(0, 0, 0) rgb(0, 0, 0) rgb(204, 204, 204); border-image: initial; overflow: hidden; padding: 2px 3px; vertical-align: bottom; background-color: rgb(255, 229, 153); font-size: 12pt; font-style: italic; overflow-wrap: break-word; text-align: center;">Panel Discussion &lt;TBD&gt;</td>
+      <td style="border-width: 1px; border-style: solid; border-color: rgb(204, 204, 204) rgb(0, 0, 0) rgb(0, 0, 0) rgb(204, 204, 204); border-image: initial; overflow: hidden; padding: 2px 3px; vertical-align: bottom; background-color: rgb(255, 229, 153); font-size: 12pt; font-style: italic; overflow-wrap: break-word; text-align: center;">TBD&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</td>
+    </tr>
+  </tbody>
+</table></google-sheets-html-origin>
+          </div>
+    </div>
+    <div class="keynote-wrapper">
+  <div class="keynote-box">
+    <div class="keynote-title">Keynote Speaker</div>
+
+    <div class="keynote-content">
+      <img src="images/Stephan_keynote.jpg" alt="Prof. Stephan Sigg">
+
+      <p>
+        <strong>Prof. Stephan Sigg</strong> is a Professor at <strong>Aalto University</strong> in the
+        Department of Information and Communications Engineering. His research interests include the
+        design, analysis, and optimization of algorithms for distributed and ubiquitous systems.
+        His work spans proactive computing, distributed adaptive beamforming, context-based secure
+        key generation, and device-free passive activity recognition.
+        <br><br>
+        Prof. Sigg is an editorial board member of the <em>Elsevier Journal on Computer Communications</em>
+        and has served as a guest editor for the <em>Springer Personal and Ubiquitous Computing Systems Journal</em>.
+        He has also served on the organizing and technical committees of several prestigious conferences,
+        including <strong>IEEE PerCom</strong> and <strong>ACM UbiComp</strong>.
+      </p>
+    </div>
+  </div>
+</div>
+
+</div>
+<!-- Footer -->
+<footer class="w3-container w3-padding-64 w3-center w3-opacity">  
+  <div class="w3-xlarge w3-padding-32">
+    For Queries Contact: <a href="mailto:perrad.workshop@gmail.com">perrad.workshop@gmail.com </a>
+    <!-- <i class="fa fa-facebook-official w3-hover-opacity"></i>
+    <i class="fa fa-instagram w3-hover-opacity"></i>
+    <i class="fa fa-snapchat w3-hover-opacity"></i>
+    <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+    <i class="fa fa-twitter w3-hover-opacity"></i>
+    <i class="fa fa-linkedin w3-hover-opacity"></i> -->
+ </div>
+ <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
+</footer>
+
+<script>
+// Used to toggle the menu on small screens when clicking on the menu button
+function myFunction() {
+  var x = document.getElementById("navDemo");
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+  } else { 
+    x.className = x.className.replace(" w3-show", "");
+  }
+}
+</script>
+
+</body>
